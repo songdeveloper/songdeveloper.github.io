@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="努力努力再努力">
-<meta property="og:type" content="website">
-<meta property="og:title" content="不舍昼夜">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="主要工具：  WebDriverAgent +  facebook-wda安装 WebDriverAgent 并真机运行1，git clone https://github.com/facebook/WebDriverAgent2，./Scripts/bootstrap.sh3，还要修改WebDriverAgent的BundleID，在WebDriverAgentRunner Build Sett">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS自动化测试工具安装">
+<meta property="og:url" content="http://yoursite.com/2018/05/17/automate/index.html">
 <meta property="og:site_name" content="不舍昼夜">
-<meta property="og:description" content="努力努力再努力">
+<meta property="og:description" content="主要工具：  WebDriverAgent +  facebook-wda安装 WebDriverAgent 并真机运行1，git clone https://github.com/facebook/WebDriverAgent2，./Scripts/bootstrap.sh3，还要修改WebDriverAgent的BundleID，在WebDriverAgentRunner Build Sett">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-29T09:35:43.501Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不舍昼夜">
-<meta name="twitter:description" content="努力努力再努力">
+<meta name="twitter:title" content="iOS自动化测试工具安装">
+<meta name="twitter:description" content="主要工具：  WebDriverAgent +  facebook-wda安装 WebDriverAgent 并真机运行1，git clone https://github.com/facebook/WebDriverAgent2，./Scripts/bootstrap.sh3，还要修改WebDriverAgent的BundleID，在WebDriverAgentRunner Build Sett">
 
 
 
@@ -118,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/17/automate/"/>
 
 
 
 
 
-  <title>不舍昼夜</title>
+  <title>iOS自动化测试工具安装 | 不舍昼夜</title>
   
 
 
@@ -143,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -217,9 +217,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -249,9 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/17/automate/" itemprop="url">iOS自动化测试工具安装</a></h1>
+          <h1 class="post-title" itemprop="name headline">iOS自动化测试工具安装</h1>
         
 
         <div class="post-meta">
@@ -301,16 +299,74 @@
       
 
       
-        
-          <h1 id="主要工具：-WebDriverAgent-facebook-wda"><a href="#主要工具：-WebDriverAgent-facebook-wda" class="headerlink" title="主要工具：  WebDriverAgent +  facebook-wda"></a>主要工具：  WebDriverAgent +  facebook-wda</h1><h6 id="安装-WebDriverAgent-并真机运行"><a href="#安装-WebDriverAgent-并真机运行" class="headerlink" title="安装 WebDriverAgent 并真机运行"></a>安装 WebDriverAgent 并真机运行</h6><p>1，git clone <a href="https://github.com/facebook/WebDriverAgent" target="_blank" rel="noopener">https://github.com/facebook/WebDriverAgent</a><br>2，./Scripts/bootstrap.sh<br>3，还要修改WebDriverAgent的BundleID，在WebDriverAgentRunner Build Settings 中 Product Bundle Identifier修改<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/17/automate/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="主要工具：-WebDriverAgent-facebook-wda"><a href="#主要工具：-WebDriverAgent-facebook-wda" class="headerlink" title="主要工具：  WebDriverAgent +  facebook-wda"></a>主要工具：  WebDriverAgent +  facebook-wda</h1><h6 id="安装-WebDriverAgent-并真机运行"><a href="#安装-WebDriverAgent-并真机运行" class="headerlink" title="安装 WebDriverAgent 并真机运行"></a>安装 WebDriverAgent 并真机运行</h6><p>1，git clone <a href="https://github.com/facebook/WebDriverAgent" target="_blank" rel="noopener">https://github.com/facebook/WebDriverAgent</a><br>2，./Scripts/bootstrap.sh<br>3，还要修改WebDriverAgent的BundleID，在WebDriverAgentRunner Build Settings 中 Product Bundle Identifier修改<br><a id="more"></a><br>4，然后commond + U 运行WebDriverAgentRunner<br>5，看到手机上安装了WebDriverAgent，代表安装成功<br>6，安装端口转发工具     brew install libimobiledevice，然后 iproxy 8100 8100<br>7，转发成功后访问 <a href="http://localhost:8100/status" target="_blank" rel="noopener">http://localhost:8100/status</a> 将会有 JSON 内容显示</p>
+<h6 id="安装facebook-wda"><a href="#安装facebook-wda" class="headerlink" title="安装facebook-wda"></a>安装facebook-wda</h6><p>终端操作：pip install –pre facebook-wda<br>github：<a href="https://github.com/openatx/facebook-wda" target="_blank" rel="noopener">https://github.com/openatx/facebook-wda</a></p>
+<h6 id="libimobiledevice详解"><a href="#libimobiledevice详解" class="headerlink" title="libimobiledevice详解"></a>libimobiledevice详解</h6><p>有人逆向出iOS设备与Windows/Mac Host接口的通讯协议，最终开发了横跨三大桌面平台的非官方版本USB接口library，它同iTools一样，都是可以替代iTunes，进行iOS设备管理的工具。<br>安装方法：<br>brew update<br>brew install libimobiledevice<br>//libimobiledevice中并不包含ipa的安装命令，所以还需要安装<br>brew install ideviceinstaller</p>
+<p>使用命令：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceinstaller -i xxx.ipa</td>
+<td>安装一个ipa文件到手机上</td>
+</tr>
+<tr>
+<td>ideviceinstaller -U [bundleID]</td>
+<td>卸载应用</td>
+</tr>
+<tr>
+<td>idevicesyslog</td>
+<td>查看系统日志</td>
+</tr>
+<tr>
+<td>idevice_id –list</td>
+<td>查看当前已连接的设备的UUID</td>
+</tr>
+<tr>
+<td>idevicescreenshot</td>
+<td>截图</td>
+</tr>
+<tr>
+<td>ideviceinfo</td>
+<td>查看设备信息</td>
+</tr>
+<tr>
+<td>idevicedate</td>
+<td>获取设备时间</td>
+</tr>
+<tr>
+<td>iproxy</td>
+<td>设置代理（端口转发的工具)</td>
+</tr>
+<tr>
+<td>ideviceimagemounter</td>
+<td>挂载DeveloperDiskImage，用于调试</td>
+</tr>
+<tr>
+<td>idevicename</td>
+<td>获取设备名称</td>
+</tr>
+<tr>
+<td>idevicedebug</td>
+<td>调试程序（需要预先挂载DeveloperImage)</td>
+</tr>
+<tr>
+<td>ideviceprovision list</td>
+<td>查看和操作设备的描述文件</td>
+</tr>
+</tbody>
+</table>
+<p>问题：<br>ideviceinstaller安装ipa报错    “Could not connect to lockdownd. Exiting.”<br>出现这个问题一般是因为新版iOS操作系统的通信协议可能有些微调，参考下面的stackoverflow的帖子，可以通过下面的命令尝试更新使用最新的libimobiledevice构建版本（当然，前提是这个开源项目会一直有人去维护～）。<br><a href="http://stackoverflow.com/questions/39035415/ideviceinstaller-fails-with-could-not-connect-to-lockdownd-exiting" target="_blank" rel="noopener">http://stackoverflow.com/questions/39035415/ideviceinstaller-fails-with-could-not-connect-to-lockdownd-exiting</a></p>
+<p>The best solution here is to get the latest libimobiledevice, which has a fix for this particular issue:</p>
+<p>brew uninstall ideviceinstaller<br>brew uninstall libimobiledevice<br>brew install –HEAD libimobiledevice<br>brew link –overwrite libimobiledevice<br>brew install ideviceinstaller<br>brew link –overwrite ideviceinstaller</p>
+<h6 id="应用示例"><a href="#应用示例" class="headerlink" title="应用示例"></a>应用示例</h6><p>使用 python 来玩微信跳一跳  <a href="https://github.com/wangshub/wechat_jump_game" target="_blank" rel="noopener">https://github.com/wangshub/wechat_jump_game</a></p>
+<h6 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h6><p>1.<a href="https://www.jianshu.com/p/6423610d3293" target="_blank" rel="noopener">https://www.jianshu.com/p/6423610d3293</a><br>2.<a href="https://github.com/wangshub/wechat_jump_game" target="_blank" rel="noopener">https://github.com/wangshub/wechat_jump_game</a></p>
+
       
     </div>
     
@@ -327,132 +383,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/04/rebuild/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="jack lang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不舍昼夜">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/04/rebuild/" itemprop="url">重构十六字心法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-04T14:30:20+08:00">
-                2017-12-04
-              </time>
+              <a href="/2017/12/04/rebuild/" rel="next" title="重构十六字心法">
+                <i class="fa fa-chevron-left"></i> 重构十六字心法
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>旧的不变，新的创建，一步切换，旧的再见</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -462,134 +414,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/29/shadowsocks/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="jack lang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不舍昼夜">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/29/shadowsocks/" itemprop="url">ubuntu 安装shadowsocks</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T17:26:35+08:00">
-                2017-03-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="配置shadowsocks"><a href="#配置shadowsocks" class="headerlink" title="配置shadowsocks"></a>配置shadowsocks</h3><p>apt-get install python-pip<br>pip install shadowsocks<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/29/shadowsocks/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -597,6 +426,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -617,8 +450,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -664,6 +506,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主要工具：-WebDriverAgent-facebook-wda"><span class="nav-number">1.</span> <span class="nav-text">主要工具：  WebDriverAgent +  facebook-wda</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#安装-WebDriverAgent-并真机运行"><span class="nav-number">1.0.0.0.0.1.</span> <span class="nav-text">安装 WebDriverAgent 并真机运行</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#安装facebook-wda"><span class="nav-number">1.0.0.0.0.2.</span> <span class="nav-text">安装facebook-wda</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#libimobiledevice详解"><span class="nav-number">1.0.0.0.0.3.</span> <span class="nav-text">libimobiledevice详解</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#应用示例"><span class="nav-number">1.0.0.0.0.4.</span> <span class="nav-text">应用示例</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#参考文章："><span class="nav-number">1.0.0.0.0.5.</span> <span class="nav-text">参考文章：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -797,6 +655,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
