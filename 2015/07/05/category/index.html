@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="旧的不变，新的创建，一步切换，旧的再见">
+<meta name="description" content="extension在编译期决议，extension一般用来隐藏类的私有信息，你必须有一个类的源码才能为一个类添加extension，所以你无法为系统的类比如NSString添加extension。category则完全不一样，它是在运行期决议的。extension可以添加实例变量，而category是无法添加实例变量的（因为在运行期，对象的内存布局已经确定，如果添加实例变量就会破坏类的内部布局，这">
 <meta property="og:type" content="article">
-<meta property="og:title" content="重构十六字心法">
-<meta property="og:url" content="http://yoursite.com/2017/12/04/rebuild/index.html">
+<meta property="og:title" content="OC 中的 Category">
+<meta property="og:url" content="http://yoursite.com/2015/07/05/category/index.html">
 <meta property="og:site_name" content="不舍昼夜">
-<meta property="og:description" content="旧的不变，新的创建，一步切换，旧的再见">
+<meta property="og:description" content="extension在编译期决议，extension一般用来隐藏类的私有信息，你必须有一个类的源码才能为一个类添加extension，所以你无法为系统的类比如NSString添加extension。category则完全不一样，它是在运行期决议的。extension可以添加实例变量，而category是无法添加实例变量的（因为在运行期，对象的内存布局已经确定，如果添加实例变量就会破坏类的内部布局，这">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-29T07:06:42.300Z">
+<meta property="og:updated_time" content="2018-09-05T11:03:50.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="重构十六字心法">
-<meta name="twitter:description" content="旧的不变，新的创建，一步切换，旧的再见">
+<meta name="twitter:title" content="OC 中的 Category">
+<meta name="twitter:description" content="extension在编译期决议，extension一般用来隐藏类的私有信息，你必须有一个类的源码才能为一个类添加extension，所以你无法为系统的类比如NSString添加extension。category则完全不一样，它是在运行期决议的。extension可以添加实例变量，而category是无法添加实例变量的（因为在运行期，对象的内存布局已经确定，如果添加实例变量就会破坏类的内部布局，这">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/04/rebuild/"/>
+  <link rel="canonical" href="http://yoursite.com/2015/07/05/category/"/>
 
 
 
 
 
-  <title>重构十六字心法 | 不舍昼夜</title>
+  <title>OC 中的 Category | 不舍昼夜</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/04/rebuild/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/05/category/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jack lang">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">重构十六字心法</h1>
+          <h1 class="post-title" itemprop="name headline">OC 中的 Category</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-04T14:30:20+08:00">
-                2017-12-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-05T06:25:53+08:00">
+                2015-07-05
               </time>
             
 
@@ -299,7 +299,10 @@
       
 
       
-        <p>旧的不变，新的创建，一步切换，旧的再见</p>
+        <p>extension在编译期决议，extension一般用来隐藏类的私有信息，你必须有一个类的源码才能为一个类添加extension，所以你无法为系统的类比如NSString添加extension。category则完全不一样，它是在运行期决议的。extension可以添加实例变量，而category是无法添加实例变量的（因为在运行期，对象的内存布局已经确定，如果添加实例变量就会破坏类的内部布局，这对编译型语言来说是灾难性的）。<br>   category的方法被放到了新方法列表的前面，而原来类的方法被放到了新方法列表的后面，运行时在查找方法的时候是顺着方法列表的顺序查<br>找的，它只要一找到对应名字的方法，就会罢休^_^，殊不知后面可能还有一样名字的方法。<br>   所有的关联对象都由AssociationsManager管理，AssociationsManager里面是由一个静态AssociationsHashMap来存储所有的关联<br>对象的。这相当于把所有对象的关联对象都存在一个全局map里面。而map的的key是这个对象的指针地址（任意两个不同对象的指针地址一定是不同的），而这个map的value又是另外一个AssociationsHashMap，里面保存了关联对象的kv对。而在对象的销毁逻辑里面，runtime的销毁对象函数objc_destructInstance里面会判断这个对象有没有关联对象，如果有，会调用_object_remove_assocations做关联对象的清理工作。</p>
+<h6 id="建议文章："><a href="#建议文章：" class="headerlink" title="建议文章："></a>建议文章：</h6><ol>
+<li><a href="https://tech.meituan.com/DiveIntoCategory.html" target="_blank" rel="noopener">《深入理解Objective-C：Category》</a></li>
+</ol>
 
       
     </div>
@@ -324,18 +327,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/29/aboutphp/" rel="next" title="Mac 配置Nginx, php-fpm, laravel开发环境">
-                <i class="fa fa-chevron-left"></i> Mac 配置Nginx, php-fpm, laravel开发环境
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/30/runloop/" rel="prev" title="iOS 中的 RunLoop && Autorelease">
-                iOS 中的 RunLoop && Autorelease <i class="fa fa-chevron-right"></i>
+              <a href="/2015/09/03/optimization/" rel="prev" title="iOS 程序优化">
+                iOS 程序优化 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -388,8 +387,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -435,6 +443,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#建议文章："><span class="nav-number">1.</span> <span class="nav-text">建议文章：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
