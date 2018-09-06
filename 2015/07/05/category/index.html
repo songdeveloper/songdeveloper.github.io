@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="不舍昼夜">
 <meta property="og:description" content="extension在编译期决议，extension一般用来隐藏类的私有信息，你必须有一个类的源码才能为一个类添加extension，所以你无法为系统的类比如NSString添加extension。category则完全不一样，它是在运行期决议的。extension可以添加实例变量，而category是无法添加实例变量的（因为在运行期，对象的内存布局已经确定，如果添加实例变量就会破坏类的内部布局，这">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T11:03:50.125Z">
+<meta property="og:updated_time" content="2018-09-06T02:25:21.511Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OC 中的 Category">
 <meta name="twitter:description" content="extension在编译期决议，extension一般用来隐藏类的私有信息，你必须有一个类的源码才能为一个类添加extension，所以你无法为系统的类比如NSString添加extension。category则完全不一样，它是在运行期决议的。extension可以添加实例变量，而category是无法添加实例变量的（因为在运行期，对象的内存布局已经确定，如果添加实例变量就会破坏类的内部布局，这">
@@ -299,7 +299,7 @@
       
 
       
-        <p>extension在编译期决议，extension一般用来隐藏类的私有信息，你必须有一个类的源码才能为一个类添加extension，所以你无法为系统的类比如NSString添加extension。category则完全不一样，它是在运行期决议的。extension可以添加实例变量，而category是无法添加实例变量的（因为在运行期，对象的内存布局已经确定，如果添加实例变量就会破坏类的内部布局，这对编译型语言来说是灾难性的）。<br>   category的方法被放到了新方法列表的前面，而原来类的方法被放到了新方法列表的后面，运行时在查找方法的时候是顺着方法列表的顺序查<br>找的，它只要一找到对应名字的方法，就会罢休^_^，殊不知后面可能还有一样名字的方法。<br>   所有的关联对象都由AssociationsManager管理，AssociationsManager里面是由一个静态AssociationsHashMap来存储所有的关联<br>对象的。这相当于把所有对象的关联对象都存在一个全局map里面。而map的的key是这个对象的指针地址（任意两个不同对象的指针地址一定是不同的），而这个map的value又是另外一个AssociationsHashMap，里面保存了关联对象的kv对。而在对象的销毁逻辑里面，runtime的销毁对象函数objc_destructInstance里面会判断这个对象有没有关联对象，如果有，会调用_object_remove_assocations做关联对象的清理工作。</p>
+        <p>extension在编译期决议，extension一般用来隐藏类的私有信息，你必须有一个类的源码才能为一个类添加extension，所以你无法为系统的类比如NSString添加extension。category则完全不一样，它是在运行期决议的。extension可以添加实例变量，而category是无法添加实例变量的（因为在运行期，对象的内存布局已经确定，如果添加实例变量就会破坏类的内部布局，这对编译型语言来说是灾难性的）。<br>   category的方法被放到了新方法列表的前面，而原来类的方法被放到了新方法列表的后面，运行时在查找方法的时候是顺着方法列表的顺序查<br>找的，它只要一找到对应名字的方法，就会罢休^_^，殊不知后面可能还有一样名字的方法。<br><a id="more"></a><br>   所有的关联对象都由AssociationsManager管理，AssociationsManager里面是由一个静态AssociationsHashMap来存储所有的关联<br>对象的。这相当于把所有对象的关联对象都存在一个全局map里面。而map的的key是这个对象的指针地址（任意两个不同对象的指针地址一定是不同的），而这个map的value又是另外一个AssociationsHashMap，里面保存了关联对象的kv对。而在对象的销毁逻辑里面，runtime的销毁对象函数objc_destructInstance里面会判断这个对象有没有关联对象，如果有，会调用_object_remove_assocations做关联对象的清理工作。</p>
 <h6 id="建议文章："><a href="#建议文章：" class="headerlink" title="建议文章："></a>建议文章：</h6><ol>
 <li><a href="https://tech.meituan.com/DiveIntoCategory.html" target="_blank" rel="noopener">《深入理解Objective-C：Category》</a></li>
 </ol>
