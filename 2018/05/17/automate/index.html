@@ -82,7 +82,7 @@
 <meta name="description" content="主要工具：  WebDriverAgent +  facebook-wda安装 WebDriverAgent 并真机运行1，git clone https://github.com/facebook/WebDriverAgent2，./Scripts/bootstrap.sh3，还要修改WebDriverAgent的BundleID，在WebDriverAgentRunner Build Sett">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS自动化测试工具安装">
-<meta property="og:url" content="http://yoursite.com/2018/05/17/automate/index.html">
+<meta property="og:url" content="https://github.com/songdeveloper/2018/05/17/automate/index.html">
 <meta property="og:site_name" content="魏窑村宋三万">
 <meta property="og:description" content="主要工具：  WebDriverAgent +  facebook-wda安装 WebDriverAgent 并真机运行1，git clone https://github.com/facebook/WebDriverAgent2，./Scripts/bootstrap.sh3，还要修改WebDriverAgent的BundleID，在WebDriverAgentRunner Build Sett">
 <meta property="og:locale" content="zh-Hans">
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/17/automate/"/>
+  <link rel="canonical" href="https://github.com/songdeveloper/2018/05/17/automate/"/>
 
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/17/automate/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/songdeveloper/2018/05/17/automate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="魏窑村宋三万">
@@ -299,8 +299,8 @@
       
 
       
-        <h1 id="主要工具：-WebDriverAgent-facebook-wda"><a href="#主要工具：-WebDriverAgent-facebook-wda" class="headerlink" title="主要工具：  WebDriverAgent +  facebook-wda"></a>主要工具：  WebDriverAgent +  facebook-wda</h1><h6 id="安装-WebDriverAgent-并真机运行"><a href="#安装-WebDriverAgent-并真机运行" class="headerlink" title="安装 WebDriverAgent 并真机运行"></a>安装 WebDriverAgent 并真机运行</h6><p>1，git clone <a href="https://github.com/facebook/WebDriverAgent" target="_blank" rel="noopener">https://github.com/facebook/WebDriverAgent</a><br>2，./Scripts/bootstrap.sh<br>3，还要修改WebDriverAgent的BundleID，在WebDriverAgentRunner Build Settings 中 Product Bundle Identifier修改<br><a id="more"></a><br>4，然后commond + U 运行WebDriverAgentRunner<br>5，看到手机上安装了WebDriverAgent，代表安装成功<br>6，安装端口转发工具     brew install libimobiledevice，然后 iproxy 8100 8100<br>7，转发成功后访问 <a href="http://localhost:8100/status" target="_blank" rel="noopener">http://localhost:8100/status</a> 将会有 JSON 内容显示</p>
-<h6 id="安装facebook-wda"><a href="#安装facebook-wda" class="headerlink" title="安装facebook-wda"></a>安装facebook-wda</h6><p>终端操作：pip install –pre facebook-wda<br>github：<a href="https://github.com/openatx/facebook-wda" target="_blank" rel="noopener">https://github.com/openatx/facebook-wda</a></p>
+        <h1 id="主要工具：-WebDriverAgent-facebook-wda"><a href="#主要工具：-WebDriverAgent-facebook-wda" class="headerlink" title="主要工具：  WebDriverAgent +  facebook-wda"></a>主要工具：  WebDriverAgent +  facebook-wda</h1><h6 id="安装-WebDriverAgent-并真机运行"><a href="#安装-WebDriverAgent-并真机运行" class="headerlink" title="安装 WebDriverAgent 并真机运行"></a>安装 WebDriverAgent 并真机运行</h6><p>1，git clone <a href="https://github.com/facebook/WebDriverAgent">https://github.com/facebook/WebDriverAgent</a><br>2，./Scripts/bootstrap.sh<br>3，还要修改WebDriverAgent的BundleID，在WebDriverAgentRunner Build Settings 中 Product Bundle Identifier修改<br><a id="more"></a><br>4，然后commond + U 运行WebDriverAgentRunner<br>5，看到手机上安装了WebDriverAgent，代表安装成功<br>6，安装端口转发工具     brew install libimobiledevice，然后 iproxy 8100 8100<br>7，转发成功后访问 <a href="http://localhost:8100/status" target="_blank" rel="noopener">http://localhost:8100/status</a> 将会有 JSON 内容显示</p>
+<h6 id="安装facebook-wda"><a href="#安装facebook-wda" class="headerlink" title="安装facebook-wda"></a>安装facebook-wda</h6><p>终端操作：pip install –pre facebook-wda<br>github：<a href="https://github.com/openatx/facebook-wda">https://github.com/openatx/facebook-wda</a></p>
 <h6 id="libimobiledevice详解"><a href="#libimobiledevice详解" class="headerlink" title="libimobiledevice详解"></a>libimobiledevice详解</h6><p>有人逆向出iOS设备与Windows/Mac Host接口的通讯协议，最终开发了横跨三大桌面平台的非官方版本USB接口library，它同iTools一样，都是可以替代iTunes，进行iOS设备管理的工具。<br>安装方法：<br>brew update<br>brew install libimobiledevice<br>//libimobiledevice中并不包含ipa的安装命令，所以还需要安装<br>brew install ideviceinstaller</p>
 <p>使用命令：</p>
 <table>
@@ -364,10 +364,10 @@
 <p>问题：<br>ideviceinstaller安装ipa报错    “Could not connect to lockdownd. Exiting.”<br>出现这个问题一般是因为新版iOS操作系统的通信协议可能有些微调，参考下面的stackoverflow的帖子，可以通过下面的命令尝试更新使用最新的libimobiledevice构建版本（当然，前提是这个开源项目会一直有人去维护～）。<br><a href="http://stackoverflow.com/questions/39035415/ideviceinstaller-fails-with-could-not-connect-to-lockdownd-exiting" target="_blank" rel="noopener">http://stackoverflow.com/questions/39035415/ideviceinstaller-fails-with-could-not-connect-to-lockdownd-exiting</a></p>
 <p>The best solution here is to get the latest libimobiledevice, which has a fix for this particular issue:</p>
 <p>brew uninstall ideviceinstaller<br>brew uninstall libimobiledevice<br>brew install –HEAD libimobiledevice<br>brew link –overwrite libimobiledevice<br>brew install ideviceinstaller<br>brew link –overwrite ideviceinstaller</p>
-<h6 id="应用示例"><a href="#应用示例" class="headerlink" title="应用示例"></a>应用示例</h6><p>使用 python 来玩微信跳一跳  <a href="https://github.com/wangshub/wechat_jump_game" target="_blank" rel="noopener">https://github.com/wangshub/wechat_jump_game</a></p>
+<h6 id="应用示例"><a href="#应用示例" class="headerlink" title="应用示例"></a>应用示例</h6><p>使用 python 来玩微信跳一跳  <a href="https://github.com/wangshub/wechat_jump_game">https://github.com/wangshub/wechat_jump_game</a></p>
 <h6 id="建议文章："><a href="#建议文章：" class="headerlink" title="建议文章："></a>建议文章：</h6><ol>
 <li><a href="https://www.jianshu.com/p/6423610d3293" target="_blank" rel="noopener">《iOS开发的另类神器：libimobiledevice开源包》</a></li>
-<li><a href="https://github.com/wangshub/wechat_jump_game" target="_blank" rel="noopener">《教你用 Python 来玩微信跳一跳》</a></li>
+<li><a href="https://github.com/wangshub/wechat_jump_game">《教你用 Python 来玩微信跳一跳》</a></li>
 <li><a href="https://testerhome.com/topics/9854" target="_blank" rel="noopener">《使用 Python 库 facebook-wda 完成网易云音乐 iOS 客户端的自动化测试 (示例)》</a></li>
 <li><a href="https://testerhome.com/topics/7220" target="_blank" rel="noopener">《ATX 文档 - iOS 真机如何安装 WebDriverAgent》</a></li>
 <li><a href="https://yuhanle.github.io/2018/01/03/how-to-install-web-driver-agent-on-device/" target="_blank" rel="noopener">《iOS 真机调试如何安装 WebDriverAgent》</a></li>
