@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>iOS自动化测试工具安装 | 魏窑四君子</title><meta name="author" content="宋无极"><meta name="copyright" content="宋无极"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="主要工具： WebDriverAgent + facebook-wda安装 WebDriverAgent 并真机运行1，git clone https:&#x2F;&#x2F;github.com&#x2F;facebook&#x2F;WebDriverAgent2，.&#x2F;Scripts&#x2F;bootstrap.sh3，还要修改WebDriverAgent的BundleID，在WebDriverAgentRunner Build Settin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS自动化测试工具安装">
+<meta property="og:url" content="http://songdeveloper.github.io/2018/05/17/automate/index.html">
+<meta property="og:site_name" content="魏窑四君子">
+<meta property="og:description" content="主要工具： WebDriverAgent + facebook-wda安装 WebDriverAgent 并真机运行1，git clone https:&#x2F;&#x2F;github.com&#x2F;facebook&#x2F;WebDriverAgent2，.&#x2F;Scripts&#x2F;bootstrap.sh3，还要修改WebDriverAgent的BundleID，在WebDriverAgentRunner Build Settin">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2018-05-17T13:31:19.000Z">
+<meta property="article:modified_time" content="2021-09-23T13:33:14.798Z">
+<meta property="article:author" content="宋无极">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://songdeveloper.github.io/2018/05/17/automate/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'iOS自动化测试工具安装',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-09-23 21:33:14'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">8</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">魏窑四君子</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">iOS自动化测试工具安装</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2018-05-17T13:31:19.000Z" title="Created 2018-05-17 21:31:19">2018-05-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-09-23T13:33:14.798Z" title="Updated 2021-09-23 21:33:14">2021-09-23</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="iOS自动化测试工具安装"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="主要工具：-WebDriverAgent-facebook-wda"><a href="#主要工具：-WebDriverAgent-facebook-wda" class="headerlink" title="主要工具： WebDriverAgent + facebook-wda"></a>主要工具： WebDriverAgent + facebook-wda</h1><h4 id="安装-WebDriverAgent-并真机运行"><a href="#安装-WebDriverAgent-并真机运行" class="headerlink" title="安装 WebDriverAgent 并真机运行"></a>安装 WebDriverAgent 并真机运行</h4><p>1，git clone <a target="_blank" rel="noopener" href="https://github.com/facebook/WebDriverAgent">https://github.com/facebook/WebDriverAgent</a><br>2，./Scripts/bootstrap.sh<br>3，还要修改WebDriverAgent的BundleID，在WebDriverAgentRunner Build Settings 中 Product Bundle Identifier修改<br><a href=""></a><br>4，然后commond + U 运行WebDriverAgentRunner<br>5，看到手机上安装了WebDriverAgent，代表安装成功<br>6，安装端口转发工具 brew install libimobiledevice，然后 iproxy 8100 8100<br>7，转发成功后访问 <a target="_blank" rel="noopener" href="http://localhost:8100/status">http://localhost:8100/status</a> 将会有 JSON 内容显示</p>
+<h4 id="安装facebook-wda"><a href="#安装facebook-wda" class="headerlink" title="安装facebook-wda"></a>安装facebook-wda</h4><p>终端操作：pip install –pre facebook-wda<br>github：<a target="_blank" rel="noopener" href="https://github.com/openatx/facebook-wda">https://github.com/openatx/facebook-wda</a></p>
+<h4 id="libimobiledevice详解"><a href="#libimobiledevice详解" class="headerlink" title="libimobiledevice详解"></a>libimobiledevice详解</h4><p>有人逆向出iOS设备与Windows/Mac Host接口的通讯协议，最终开发了横跨三大桌面平台的非官方版本USB接口library，它同iTools一样，都是可以替代iTunes，进行iOS设备管理的工具。<br>安装方法：<br>brew update<br>brew install libimobiledevice<br>//libimobiledevice中并不包含ipa的安装命令，所以还需要安装<br>brew install ideviceinstaller</p>
+<p>使用命令：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>deviceinstaller -i xxx.ipa</td>
+<td>安装一个ipa文件到手机上</td>
+</tr>
+<tr>
+<td>ideviceinstaller -U [bundleID]</td>
+<td>卸载应用</td>
+</tr>
+<tr>
+<td>idevicesyslog</td>
+<td>查看系统日志</td>
+</tr>
+<tr>
+<td>idevice_id –list</td>
+<td>查看当前已连接的设备的UUID</td>
+</tr>
+<tr>
+<td>idevicescreenshot</td>
+<td>截图</td>
+</tr>
+<tr>
+<td>ideviceinfo</td>
+<td>查看设备信息</td>
+</tr>
+<tr>
+<td>idevicedate</td>
+<td>获取设备时间</td>
+</tr>
+<tr>
+<td>iproxy</td>
+<td>设置代理（端口转发的工具)</td>
+</tr>
+<tr>
+<td>ideviceimagemounter</td>
+<td>挂载DeveloperDiskImage，用于调试</td>
+</tr>
+<tr>
+<td>idevicename</td>
+<td>获取设备名称</td>
+</tr>
+<tr>
+<td>idevicedebug</td>
+<td>调试程序（需要预先挂载DeveloperImage)</td>
+</tr>
+<tr>
+<td>ideviceprovision list</td>
+<td>查看和操作设备的描述文件</td>
+</tr>
+</tbody></table>
+<p>问题：<br>ideviceinstaller安装ipa报错 “Could not connect to lockdownd. Exiting.”<br>出现这个问题一般是因为新版iOS操作系统的通信协议可能有些微调，参考下面的stackoverflow的帖子，可以通过下面的命令尝试更新使用最新的libimobiledevice构建版本（当然，前提是这个开源项目会一直有人去维护～）。<br><a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/39035415/ideviceinstaller-fails-with-could-not-connect-to-lockdownd-exiting">http://stackoverflow.com/questions/39035415/ideviceinstaller-fails-with-could-not-connect-to-lockdownd-exiting</a></p>
+<p>The best solution here is to get the latest libimobiledevice, which has a fix for this particular issue:</p>
+<p>brew uninstall ideviceinstaller<br>brew uninstall libimobiledevice<br>brew install –HEAD libimobiledevice<br>brew link –overwrite libimobiledevice<br>brew install ideviceinstaller<br>brew link –overwrite ideviceinstaller</p>
+<h4 id="应用示例"><a href="#应用示例" class="headerlink" title="应用示例"></a>应用示例</h4><p>使用 python 来玩微信跳一跳 <a target="_blank" rel="noopener" href="https://github.com/wangshub/wechat_jump_game">https://github.com/wangshub/wechat_jump_game</a></p>
+<h4 id="建议文章："><a href="#建议文章：" class="headerlink" title="建议文章："></a>建议文章：</h4><ol>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/6423610d3293">《iOS开发的另类神器：libimobiledevice开源包》</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/wangshub/wechat_jump_game">《教你用 Python 来玩微信跳一跳》</a></li>
+<li><a target="_blank" rel="noopener" href="https://testerhome.com/topics/9854">《使用 Python 库 facebook-wda 完成网易云音乐 iOS 客户端的自动化测试 (示例)》</a></li>
+<li><a target="_blank" rel="noopener" href="https://testerhome.com/topics/7220">《ATX 文档 - iOS 真机如何安装 WebDriverAgent》</a></li>
+<li><a target="_blank" rel="noopener" href="https://yuhanle.github.io/2018/01/03/how-to-install-web-driver-agent-on-device/">《iOS 真机调试如何安装 WebDriverAgent》</a></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">宋无极</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://songdeveloper.github.io/2018/05/17/automate/">http://songdeveloper.github.io/2018/05/17/automate/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2018/03/30/runloop/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">iOS 中的 RunLoop &amp;&amp; Autorelease</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">宋无极</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">8</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%B7%A5%E5%85%B7%EF%BC%9A-WebDriverAgent-facebook-wda"><span class="toc-number">1.</span> <span class="toc-text">主要工具： WebDriverAgent + facebook-wda</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-WebDriverAgent-%E5%B9%B6%E7%9C%9F%E6%9C%BA%E8%BF%90%E8%A1%8C"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">安装 WebDriverAgent 并真机运行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85facebook-wda"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">安装facebook-wda</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#libimobiledevice%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">libimobiledevice详解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">应用示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BB%BA%E8%AE%AE%E6%96%87%E7%AB%A0%EF%BC%9A"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">建议文章：</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2018/05/17/automate/" title="iOS自动化测试工具安装"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="iOS自动化测试工具安装"/></a><div class="content"><a class="title" href="/2018/05/17/automate/" title="iOS自动化测试工具安装">iOS自动化测试工具安装</a><time datetime="2018-05-17T13:31:19.000Z" title="Created 2018-05-17 21:31:19">2018-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2018/03/30/runloop/" title="iOS 中的 RunLoop &amp;&amp; Autorelease"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="iOS 中的 RunLoop &amp;&amp; Autorelease"/></a><div class="content"><a class="title" href="/2018/03/30/runloop/" title="iOS 中的 RunLoop &amp;&amp; Autorelease">iOS 中的 RunLoop &amp;&amp; Autorelease</a><time datetime="2018-03-30T13:28:38.000Z" title="Created 2018-03-30 21:28:38">2018-03-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2017/08/29/php/" title="Mac 配置Nginx, php-fpm, laravel开发环境"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mac 配置Nginx, php-fpm, laravel开发环境"/></a><div class="content"><a class="title" href="/2017/08/29/php/" title="Mac 配置Nginx, php-fpm, laravel开发环境">Mac 配置Nginx, php-fpm, laravel开发环境</a><time datetime="2017-08-29T13:17:53.000Z" title="Created 2017-08-29 21:17:53">2017-08-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2017/03/29/shadowsocks/" title="ubuntu 安装shadowsocks"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ubuntu 安装shadowsocks"/></a><div class="content"><a class="title" href="/2017/03/29/shadowsocks/" title="ubuntu 安装shadowsocks">ubuntu 安装shadowsocks</a><time datetime="2017-03-29T13:14:45.000Z" title="Created 2017-03-29 21:14:45">2017-03-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2017/01/04/audio/" title="iOS开发中的音视频"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="iOS开发中的音视频"/></a><div class="content"><a class="title" href="/2017/01/04/audio/" title="iOS开发中的音视频">iOS开发中的音视频</a><time datetime="2017-01-04T13:09:02.000Z" title="Created 2017-01-04 21:09:02">2017-01-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 宋无极</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
